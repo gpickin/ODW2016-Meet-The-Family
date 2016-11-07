@@ -38,6 +38,18 @@ component{
 		event.setView( "login/login" );
 	}	
 
+	/**
+    * doLogin  
+    */
+    function dologin( event, rc, prc ){
+		var loggedIn = true;
+		if( loggedIn ){
+			setNextEvent( 'user/myaccount' );
+		} else {
+			setNextEvent( 'login/login' );
+		}
+
+	}	
 
 	
 }
