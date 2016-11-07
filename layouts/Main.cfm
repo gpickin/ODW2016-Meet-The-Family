@@ -1,104 +1,229 @@
-<cfoutput>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to Coldbox!</title>
-	<meta name="description" content="ColdBox Application Template">
-    <meta name="author" content="Ortus Solutions, Corp">
-	<!---Base URL --->
-	<base href="#event.getHTMLBaseURL()#" />
-	<!---css --->
-	<link href="includes/css/bootstrap.min.css" rel="stylesheet">
-	<!---js --->
-    <script src="includes/js/jquery.js"></script>
-	<script src="includes/js/bootstrap.min.js"></script>
-	<style>
-	 /* Utility */
-	.centered { text-align: center !important; }
-	.inline{ display: inline !important; }
-	.margin10{ margin: 10px; }
-	.padding10{ padding: 10px; }
-	.margin0{ margin: 0px; }
-	.padding0{ padding: 0px; }
-	.footer {
-	  margin-top: 45px;
-	  padding: 35px 35px;
-	  border-top: 1px solid ##e5e5e5;
-	}
-	.footer p {
-	  margin-bottom: 0;
-	  color: ##555;
-	}
-	body{ padding-top: 50px; }
-	</style>
-</head>
-<body data-spy="scroll">
-	<!---Top NavBar --->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<!---Brand --->
-			<div class="navbar-header">
-				<!---Responsive Design --->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="##navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				</button>
-				<!---Branding --->
-				<a class="navbar-brand" href="#event.buildLink('')#"><strong>Home</strong></a>
-			</div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Who's Who - Social Media for Whovians</title>
 
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<!---About --->
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="##" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="glyphicon glyphicon-info-sign"></i> About <b class="caret"></b>
-						</a>
-						<ul id="actions-submenu" class="dropdown-menu">
-							 <li><a href=""><strong>#getSetting("codename",1)# (#getsetting("suffix",1)#)</strong></a></li>
-							 <li><a href="http://coldbox.ortusbooks.com"><i class="glyphicon glyphicon-book"></i> Help Manual</a></li>
-							 <li><a href="mailto:bugs@coldbox.org?subject=DataBoss Bug Report"><i class="glyphicon glyphicon-fire"></i> Report a Bug</a></li>
-							 <li><a href="mailto:info@coldbox.org?subject=DataBoss Feedback"><i class="glyphicon glyphicon-bullhorn"></i> Send Us Feedback</a></li>
-							 <li><a href="http://www.ortussolutions.com/products/coldbox"><i class="glyphicon glyphicon-home"></i> Professional Support</a></li>
-							 <li class="divider"></li>
-							 <li class="centered">
-							 	<img width="150" src="includes/images/ColdBoxLogo2015_300.png" alt="logo"/>
-							 </li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div> <!---end container --->
-	</nav> <!---end navbar --->
+    <!-- Bootstrap core CSS -->
+    <link href="/includes/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/includes/css/bootstrap-theme.min.css" rel="stylesheet">
 
-	<!---Container And Views --->
-	<div class="container">#renderView()#</div>
 
-	<footer class="footer">
-		<p class="pull-right">
-			<a href="##"><i class="glyphicon glyphicon-arrow-up"></i> Back to top</a>
-		</p>
-		<p>
-			<a href="http://www.coldbox.org">ColdBox Platform</a> is a copyright-trademark software by
-			<a href="http://www.ortussolutions.com">Ortus Solutions, Corp</a>
-		</p>
-		<p>
-			Design thanks to
-			<a href="http://twitter.github.com/bootstrap">Twitter Boostrap</a>
-		</p>
-	</footer>
+	<link href="/includes/css/main.css" rel="stylesheet">
 
-	<script>
-	$(function() {
-		// activate all drop downs
-		$('.dropdown-toggle').dropdown();
-		// Tooltips
-		$("[rel=tooltip]").tooltip();
-	})
-	</script>
-</body>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+	<div id="logo_holder" class="container">
+		<a href="##" title="Who's Who - Social Network for Whovians"><img src="/includes/img/logo.png" border="0" alt="Who's Who - Social Network for Whovians"></a>
+	</div>	
+
+     
+    <div class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#">Who's Who - Social Media for Whovians</a>-->
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a href="##">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+
+	
+    <div class="bodycontainer container theme-showcase" role="main">
+    	<cfoutput>
+    		#renderView()#
+    	</cfoutput>
+    
+
+
+
+
+	    <div class="footer">
+	      &copy; Copyright 2016 - ODW2016 - Meet the Family - All Rights Reserved
+	    </div>  
+  
+  	</div> <!-- /container -->
+
+  
+  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/includes/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+
+        $(document).on('ready', function(){
+              $('#btn_login').on('click', function(){
+                    if ( $('#email').val().length < 5 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - Thats not a real email, try again Darlek');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#email').val().indexOf('@') === -1 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - Where are you @... obviously not from around here with an email with no @, try again PUNY HUMAN');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#email').val().indexOf('.', $('#email').val().indexOf('@')) === -1 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - TARDIS requires a full stop, especially in this domain, try again time traveler');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#email').val().charAt($('#email').val().length - 1) === '.' ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - TARDIS requires a full stop, but this is not the end of the line, try again time traveler');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#password').val().length < 8 ){
+                        $('#status').show();
+                        $('#status').html('Invalid password - Thats not a real password, try again Cyberman');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else {
+                        $.ajax({
+                              type: "POST",
+                              url: "http://devobj2015:8504/testablejavascript/cfcs/userServiceRemote.cfc?method=login",
+                              data: ( { email: $('#email').val(), password: $('#password').val() } ),
+                              cache: false,
+                              dataType: "text"
+                          })
+                          .done( function( data ) {
+                              var ajaxResponse = JSON.parse(data);
+                              if ( ajaxResponse.RESULT == '200' ){
+                                  $('#status').show();
+                                  $('#status').html('TARDIS Access Granted - Please wait for the Doctor to take you for a spin');
+                                  $('#status').addClass('alert');
+                                  $('#status').addClass('alert-danger');
+                                  $('#status').delay( 2000 ).hide( 1000 );
+                              }
+                              else {
+                                  $('#status').show();
+                                  $('#status').html('Did you lose your TARDIS key? Please try to login again.');
+                                  $('#status').addClass('alert');
+                                  $('#status').addClass('alert-danger');
+                                  $('#status').delay( 2000 ).hide( 1000 );
+                              }
+                          })
+                          .fail( function( data) {
+                              //console.log( data );
+                              $('#status').show();
+                              $('#status').html('The TARDIS is lost in a timey whimey vortex - try back later.');
+                              $('#status').addClass('alert');
+                              $('#status').addClass('alert-danger');
+                              $('#status').delay( 2000 ).hide( 1000 );
+                          });
+                    }
+              });
+
+              $('#btn_forgotPassword').on('click', function(){
+                    if ( $('#forgotEmail').val().length < 5 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - Thats not a real email, try again Darlek');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#forgotEmail').val().indexOf('@') <= 1 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - Where are you @... obviously not from around here with an email with no @, try again PUNY HUMAN');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#forgotEmail').val().indexOf('.', $('#forgotEmail').val().indexOf('@')) === -1 ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - TARDIS requires a full stop, especially in this domain, try again time traveler');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else if ( $('#forgotEmail').val().charAt($('#forgotEmail').val().length - 1) === '.' ){
+                        $('#status').show();
+                        $('#status').html('Invalid Email - TARDIS requires a full stop, but this is not the end of the line, try again time traveler');
+                        $('#status').addClass('alert');
+                        $('#status').addClass('alert-danger');
+                        $('#status').delay( 2000 ).hide( 1000 );
+                    }
+                    else {
+                      $.ajax({
+                            type: "POST",
+                            url: "http://devobj2015:8504/testablejavascript/cfcs/userServiceRemote.cfc?method=resetPassword",
+                            data: ( { email: $('#forgotEmail').val() } ),
+                            cache: false,
+                            dataType: "text"
+                        })
+                        .done( function( data ) {
+                          var ajaxResponse = JSON.parse(data);
+                          if ( ajaxResponse.RESULT == '200' ){
+                              $('#status').show();
+                              $('#status').html("TARDIS is resetting your password, please check email for your Notification");
+                              $('#status').addClass('alert');
+                              $('#status').addClass('alert-danger');
+                              $('#status').delay( 2000 ).hide( 1000 );
+                          }
+                          else {
+                              $('#status').show();
+                              $('#status').html("That email address doesn't exist in this dimension");
+                              $('#status').addClass('alert');
+                              $('#status').addClass('alert-danger');
+                              $('#status').delay( 2000 ).hide( 1000 );
+                          }
+                        })
+                        .fail( function( data) {
+                            //console.log( data );
+                            $('#status').show();
+                            $('#status').html('The TARDIS is lost in a timey whimey vortex - try back later.');
+                            $('#status').addClass('alert');
+                            $('#status').addClass('alert-danger');
+                            $('#status').delay( 2000 ).hide( 1000 );
+                        });
+                    }
+              });
+
+        });
+
+    </script>
+
+  </body>
 </html>
-</cfoutput>
+
