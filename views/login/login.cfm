@@ -10,8 +10,8 @@
             Please sign in
     
         </h2>
-        <input class="form-control" type="email" name="email" id="email" autofocus="" required="" placeholder="Email address"></input>
-        <input class="form-control" type="password" name="password" id="password" required="" placeholder="Password"></input>
+        <input class="form-control" type="text" name="email" id="email" autofocus="" placeholder="Email address"></input>
+        <input class="form-control" type="password" name="password" id="password" placeholder="Password"></input>
         <label class="checkbox">
             <input type="checkbox" value="remember-me"></input>
     
