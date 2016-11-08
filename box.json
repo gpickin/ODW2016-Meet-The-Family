@@ -25,9 +25,11 @@
     },
     "installPaths":{
         "coldbox":"coldbox",
-        "testbox":"testbox"
+        "testbox":"testbox",
+        "cbmessagebox":"modules\\cbmessagebox"
     },
     "dependencies":{
-        "coldbox":"4.2.0"
+        "coldbox":"4.2.0",
+        "cbmessagebox":"^2.2.0+10"
     }
 }
