@@ -13,10 +13,16 @@ component{
 	// REST Allowed HTTP Methods Ex: this.allowedMethods = {delete='POST,DELETE',index='GET'}
 	this.allowedMethods = {};
 	
+	function preHandler( event, rc, prc, action, eventArguments ){
+		param name="session.userid", default="";
+
+		if( session.userid == '' ){
+			setNextEvent( 'login/login' );
+		}
+	}
+
 	/**
 	IMPLICIT FUNCTIONS: Uncomment to use
-	function preHandler( event, rc, prc, action, eventArguments ){
-	}
 	function postHandler( event, rc, prc, action, eventArguments ){
 	}
 	function aroundHandler( event, rc, prc, targetAction, eventArguments ){
