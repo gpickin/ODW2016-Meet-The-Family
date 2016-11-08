@@ -2,6 +2,8 @@
 * I am a new handler
 */
 component{
+
+	property name="messagebox"		inject="id:messagebox@cbmessagebox";
 	
 	// OPTIONAL HANDLER PROPERTIES
 	this.prehandler_only 	= "";
@@ -111,8 +113,10 @@ component{
 		//abort;
 		
 		if( loggedIn ){
+			messagebox.info( message );
 			setNextEvent( 'user/myaccount' );
 		} else {
+			messagebox.error( message );
 			setNextEvent( 'login/login' );
 		}
 

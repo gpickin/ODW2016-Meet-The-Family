@@ -1,6 +1,8 @@
 <cfoutput>
 <h1>All of time and space, everything that ever happened or ever will - where do you want to start?</h1>
 
+#getInstance( "messagebox@cbmessagebox" ).renderIt()#
+
 <div class="row">
 	<div class="col-md-5">
       <form action="/login/doLogin" method="post" class="form-signin" role="form">
