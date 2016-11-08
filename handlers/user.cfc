@@ -35,9 +35,18 @@ component{
     * myaccount  
     */
     function myaccount( event, rc, prc ){
+    	param name="session.userid", default="";
+		param name="session.username", default="";
 		event.setView( "user/myaccount" );
 	}	
 
-
+	/**
+    * logout  
+    */
+    function logout( event, rc, prc ){
+		session.userid = '';
+		session.username = '';
+    	setNextEvent( 'login/login' );
+	}
 	
 }

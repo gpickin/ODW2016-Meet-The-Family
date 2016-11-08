@@ -95,6 +95,8 @@ component{
     		//writeDump( qryRes.getResult() );	
 
     		if( qryRes.getResult().recordcount == 1){
+    			session.userid = qryRes.getResult().id;
+    			session.username = qryRes.getResult().name;
     			loggedIn = true;
 				message = "Successfully logged in. Welcome back #qryRes.getResult().name#";
     		} else {

@@ -44,7 +44,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-          	<li><a href="##">Home</a></li>
+          	<li><a href="/user/myaccount">Home</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
