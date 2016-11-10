@@ -43,6 +43,13 @@ component{
     function myaccount( event, rc, prc ){
     	param name="session.userid", default="";
 		param name="session.username", default="";
+		
+		var user = getInstance( "user" );
+		var userDetails = user.getByID( session.userID );
+		
+		rc.userName = userDetails.getResult().name;
+		rc.userEmail = userDetails.getResult().email;
+		
 		event.setView( "user/myaccount" );
 	}	
 

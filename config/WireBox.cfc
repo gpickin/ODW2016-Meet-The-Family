@@ -3,8 +3,8 @@
 	/**
 	* Configure WireBox, that's it!
 	*/
-	function configure(){
-		
+	function configure(){		
+
 		// The WireBox configuration structure DSL
 		wireBox = {
 			// Scope registration, automatically register a wirebox injector instance on any CF scope
@@ -25,8 +25,9 @@
 				// annotationName = "mapping name"
 			},
 			
+			// Or do it this way....
 			// Package scan locations
-			scanLocations = [],
+//			scanLocations = [ "models" ],
 			
 			// Stop Recursions
 			stopRecursions = [],
@@ -40,7 +41,6 @@
 			]			
 		};
 		
-		// Map Bindings below
 	}	
 
 }
