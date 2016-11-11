@@ -39,11 +39,21 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/"{
 				setup();
 			});
 
-			it( "login", function(){
-				var event = execute( event="login.login", renderResults=true );
-				// expectations go here.
-				expect( false ).toBeTrue();
+			it( "logins with correct credentials", function(){
+				getRequestContext().setValue( "email", "gavin@ortussolutions.com" );
+				getRequestContext().setValue( "password", "gavin" );
+				var event = execute( event="login.doLogin", renderResults=true );
+				debug(var = event.getCollection());
+				expect( event.getValue( "setNextEvent_event" ) ).toBe( "user/myaccount" );
 			});
+
+			it( "does not login in with incorrect credentials", function() {
+				getRequestContext().setValue( "email", "eric@ortussolutions.com" );
+				getRequestContext().setValue( "password", "eric" );
+				var event = execute( event="login.doLogin", renderResults=true );
+				debug(var = event.getCollection());
+				expect( event.getValue( "setNextEvent_event" ) ).toBe( "login/login" );
+			} );
 
 		
 		});
