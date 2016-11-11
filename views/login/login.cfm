@@ -5,7 +5,7 @@
 
 <div class="row">
 	<div class="col-md-5">
-      <form action="/login/doLogin" method="post" class="form-signin" role="form">
+      <form action="#event.buildLink( "login/doLogin" )#" method="post" class="form-signin" role="form">
 
         <h2 class="form-signin-heading">
     
