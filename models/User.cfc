@@ -48,7 +48,7 @@ component name="user"
 		myQry.addParam(name="password",value="#arguments.password#",CFSQLTYPE="CF_SQL_VARCHAR"); // add query param
 		var qryRes = myQry.execute(); // execute query
 
-		return qryRes;			
+		return qryRes;
 	}
 
 	public any function getByID( required numeric userID )
