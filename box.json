@@ -21,12 +21,14 @@
         
     ],
     "devDependencies":{
-        "testbox":"^2.3.0+00044"
+        "testbox":"^2.3.0+00044",
+        "integrated":"^3.1.0"
     },
     "installPaths":{
         "coldbox":"coldbox",
         "testbox":"testbox",
-        "cbmessagebox":"modules\\cbmessagebox"
+        "cbmessagebox":"modules\\cbmessagebox",
+        "integrated":"integrated"
     },
     "dependencies":{
         "coldbox":"4.2.0",

@@ -1,0 +1,63 @@
+{
+    "name":"Integrated",
+    "version":"3.1.0",
+    "author":"Eric Peterson",
+    "location":"elpete/integrated#v3.1.0",
+    "directory":"",
+    "createPackageDirectory":true,
+    "packageDirectory":"",
+    "homepage":"https://github.com/elpete/integrated",
+    "documentation":"https://github.com/elpete/integrated/wiki",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/elpete/integrated"
+    },
+    "bugs":"https://github.com/elpete/integrated/issues",
+    "slug":"integrated",
+    "shortDescription":"A TestBox package for even better Integration tests in ColdBox!",
+    "description":"A TestBox package for even better Integration tests in ColdBox!",
+    "type":"testing",
+    "keywords":[
+        "testbox",
+        "coldbox",
+        "integration",
+        "testing",
+        "database"
+    ],
+    "scripts":{
+        "postVersion":"package set location='elpete/integrated#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    },
+    "private":false,
+    "license":[
+        {
+            "type":"MIT",
+            "URL":"http://opensource.org/licenses/MIT"
+        }
+    ],
+    "devDependencies":{
+        "coldbox":"^4.2.0+00002",
+        "testbox":"2.3.0+00044",
+        "docbox":"2.0.5"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests",
+        "docs",
+        "composer.json",
+        "composer.lock",
+        "gulpfile.js",
+        "package.json",
+        "server.json"
+    ],
+    "installPaths":{
+        "testbox":"testbox",
+        "coldbox":"tests/resources/SampleApp/coldbox",
+        "docbox":"docbox"
+    },
+    "dependencies":{
+        
+    }
+}

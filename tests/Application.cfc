@@ -19,4 +19,7 @@ component{
 	rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" );
 	this.mappings["/root"]   = rootPath;
 
+	this.javaSettings = { loadPaths = [ "Integrated/lib" ], reloadOnChange = false };
+
+
 }
