@@ -35,15 +35,17 @@ component{
 		
 	/**
     * login  
+    * Note: May use caching since our content is static
     */
-    function login( event, rc, prc ){
+    function login( event, rc, prc ) cache="true"{
 		event.setView( "login/login" );
 	}	
 
 	/**
     * doLogin  
+    * Note: May use caching since our cache key is comprised of form/URL values
     */
-    function dologin( event, rc, prc ){
+    function dologin( event, rc, prc ) cache="true"{
 
 		var loggedIn = false;
 		if ( len( rc.email ) < 5 ){
