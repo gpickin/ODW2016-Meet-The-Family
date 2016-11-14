@@ -71,7 +71,7 @@ component{
     * logout  
     */
     function logout( event, rc, prc ){
-		session.userid = '';
+   		session.userid = '';
 		session.username = '';
     	setNextEvent( 'login/login' );
 	}

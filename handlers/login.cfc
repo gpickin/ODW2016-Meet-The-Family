@@ -15,11 +15,14 @@ component{
 	this.aroundHandler_except = "";		
 	// REST Allowed HTTP Methods Ex: this.allowedMethods = {delete='POST,DELETE',index='GET'}
 	this.allowedMethods = {};
-	
+
+	function preHandler( event, rc, prc, action, eventArguments ){
+		logBox = getController().getLogBox().getLogger('logfile');
+	}
+
 	/**
 	IMPLICIT FUNCTIONS: Uncomment to use
-	function preHandler( event, rc, prc, action, eventArguments ){
-	}
+
 	function postHandler( event, rc, prc, action, eventArguments ){
 	}
 	function aroundHandler( event, rc, prc, targetAction, eventArguments ){
@@ -49,6 +52,7 @@ component{
     function dologin( event, rc, prc ) cache="true"{
 
 		var loggedIn = false;
+
 		if ( len( rc.email ) < 5 ){
 			loggedIn = false;
 			message = "Invalid Email - Thats not a real email, try again Darlek";
@@ -79,7 +83,10 @@ component{
 			var qryRes = user.login( rc.email, rc.password );
 			
     		if( qryRes.getResult().recordcount == 1){
-    			logger.Info("Successfully logged in. Welcome back #qryRes.getResult().name#");
+    			// Calling dependency injection
+
+    			logger.Info('Successfully logged in. Welcome back #qryRes.getResult().name#', '#qryRes.getResult()#');
+    			
     			session.userid = qryRes.getResult().id;
     			session.username = qryRes.getResult().name;
     			session.emailaddress = qryRes.getResult().email;
@@ -87,7 +94,9 @@ component{
 				message = "Successfully logged in. Welcome back #qryRes.getResult().name#";
     		} else {
     			loggedIn = false;
-    			logger.Info("Username password combination invalid. #rc.email#");
+
+    			// Another way to call logbox valid in handlers, views and interceptors
+	   			logBox.Info('Username password combination invalid. #rc.email#', '#qryRes.getResult()#');
 				message = "Username password combination invalid. Please try again.";
     		}
 			

@@ -36,7 +36,7 @@
 			//Error/Exception Handling
 			invalidHTTPMethodHandler = "",
 			exceptionHandler		= "main.onException",
-			onInvalidEvent			= "",
+			onInvalidEvent			= "main.pageNotFound",
 			customErrorTemplate		= "",
 
 			//Application Aspects
@@ -209,8 +209,7 @@
 	* Development environment
 	*/
 	function development(){
-		coldbox.customErrorTemplate = "/coldbox/system/includes/BugReport.cfm";
-
+		//coldbox.customErrorTemplate = "/coldbox/system/includes/BugReport.cfm";
 		cacheBox[ "caches" ][ "user" ] = {
 			provider = "coldbox.system.cache.providers.CacheBoxColdBoxProvider",
 			properties = {
@@ -232,5 +231,6 @@
 			viewCaching:false
 		}, true );
 	}
+
 
 }
