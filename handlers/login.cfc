@@ -4,6 +4,7 @@
 component{
 
 	property name="messagebox"		inject="id:messagebox@cbmessagebox";
+	property name="logger" inject="logBox:logger:logfile";
 	
 	// OPTIONAL HANDLER PROPERTIES
 	this.prehandler_only 	= "";
@@ -76,6 +77,7 @@ component{
 			var qryRes = user.login( rc.email, rc.password );
 			
     		if( qryRes.getResult().recordcount == 1){
+    			logger.Info("Successfully logged in. Welcome back #qryRes.getResult().name#");
     			session.userid = qryRes.getResult().id;
     			session.username = qryRes.getResult().name;
     			session.emailaddress = qryRes.getResult().email;
@@ -83,6 +85,7 @@ component{
 				message = "Successfully logged in. Welcome back #qryRes.getResult().name#";
     		} else {
     			loggedIn = false;
+    			logger.Info("Username password combination invalid. #rc.email#");
 				message = "Username password combination invalid. Please try again.";
     		}
 			

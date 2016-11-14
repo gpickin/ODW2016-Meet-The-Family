@@ -30,6 +30,12 @@ component name="user"
 									email: "nolan@ortussolutions.com",
 									password: "nolan",
 									name: "Nolan Erck"
+								},
+								{
+									id: "5",
+									email: "gmurphy@ortussolutions.com",
+									password: "george",
+									name: "George Murphy"
 								}
 							]);
 
