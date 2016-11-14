@@ -1,5 +1,7 @@
-component name="user"
+component name="user" accessors="true"
 {	
+	property name="Cache" inject="cachebox:user";
+
 	public any function init()
 	{
 		// quickie "database" storage for the demo...
@@ -30,6 +32,12 @@ component name="user"
 									email: "nolan@ortussolutions.com",
 									password: "nolan",
 									name: "Nolan Erck"
+								},
+								{
+									id: "5",
+									email: "jclausen@ortussolutions.com",
+									password: "jon",
+									name: "Jon Clausen"
 								}
 							]);
 
@@ -53,15 +61,24 @@ component name="user"
 
 	public any function getByID( required numeric userID )
 	{
-		var myQry = new Query(); // new query object     
-		myQry.setdbtype( 'query');
-		
-		myQry.setAttributes( usersQuery=variables.usersQuery );
-		myQry.setSQL("select * from usersQuery where id = :userID"); //set query
-		myQry.addParam(name="userID",value="#arguments.userID#",CFSQLTYPE="CF_SQL_INT"); // add query param
-		var qryRes = myQry.execute(); // execute query
+		var sql = "select * from usersQuery where id = :userID";
+		var cacheKey = hash( arguments.userID & ':' & sql );
 
-		return qryRes;			
+		var qUser = getCache().get( cacheKey );
+
+
+		if( isNull( qUser ) ){
+			var myQry = new Query(); // new query object     
+			myQry.setdbtype( 'query');
+			
+			myQry.setAttributes( usersQuery=variables.usersQuery );
+			myQry.setSQL(sql); //set query
+			myQry.addParam(name="userID",value="#arguments.userID#",CFSQLTYPE="CF_SQL_INT"); // add query param
+			var qUser = myQry.execute(); // execute query
+			getCache().set( cacheKey, qUser );	
+		}
+
+		return qUser;			
 	}
 	
 }

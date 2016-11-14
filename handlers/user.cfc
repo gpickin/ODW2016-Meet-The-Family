@@ -39,13 +39,27 @@ component{
 		
 	/**
     * myaccount  
+    * Note:  Cannot use caching for events since values are set by session variables
     */
-    function myaccount( event, rc, prc ){
+    function myaccount( event, rc, prc ) cache="false"{
     	param name="session.userid", default="";
 		param name="session.username", default="";
 		
 		var user = getInstance( "user" );
 		var userDetails = user.getByID( session.userID );
+		
+		rc.userName = userDetails.getResult().name;
+		rc.userEmail = userDetails.getResult().email;
+		
+		event.setView( "user/myaccount" );
+	}
+
+	/**
+	* Note:  May use caching for events since values are set provided in URL route
+	**/
+    function account( event, rc, prc ) cache="true"{
+		var user = getInstance( "user" );
+		var userDetails = user.getByID( event.getValue( "id", 0 ) );
 		
 		rc.userName = userDetails.getResult().name;
 		rc.userEmail = userDetails.getResult().email;

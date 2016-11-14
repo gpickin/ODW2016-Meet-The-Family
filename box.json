@@ -26,10 +26,12 @@
     "installPaths":{
         "coldbox":"coldbox",
         "testbox":"testbox",
-        "cbmessagebox":"modules\\cbmessagebox"
+        "cbmessagebox":"modules\\cbmessagebox",
+        "cbredis":"modules/cbredis"
     },
     "dependencies":{
         "coldbox":"4.2.0",
-        "cbmessagebox":"^2.2.0+10"
+        "cbmessagebox":"^2.2.0+10",
+        "cbredis":"^1.0.0+17"
     }
 }

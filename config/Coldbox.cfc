@@ -40,9 +40,9 @@
 			customErrorTemplate		= "",
 
 			//Application Aspects
-			handlerCaching 			= false,
-			eventCaching			= false,
-			viewCaching				= false
+			handlerCaching 			= true,
+			eventCaching			= true,
+			viewCaching				= true
 		};
 
 		// custom settings

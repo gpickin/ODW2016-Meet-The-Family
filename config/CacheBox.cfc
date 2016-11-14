@@ -29,7 +29,7 @@
 			// Register all the custom named caches you like here
 			caches = {
 				// Named cache for all coldbox event and view template caching
-				template = {
+				"template" : {
 					provider = "coldbox.system.cache.providers.CacheBoxColdBoxProvider",
 					properties = {
 						objectDefaultTimeout = 120,
@@ -42,7 +42,25 @@
 						maxObjects = 300,
 						objectStore = "ConcurrentSoftReferenceStore" //memory sensitive
 					}
-				}		
+				},
+				"user" :
+				{
+					provider : 'modules.cbRedis.models.RedisColdboxProvider'
+				    ,properties : {
+				    	maxConnections : 10
+						,defaultTimeoutUnit : "MINUTES"
+						,objectDefaultTimeout : 30
+			            ,opTimeout : 5000
+				        ,timeoutExceptionThreshold : 5000
+				        ,ignoreRedisTimeouts : true
+						,bucket : "default"
+						,server : "localhost:6379" // This can be an array
+						,caseSensitiveKeys : true
+						,updateStats : true
+						,debug = false
+						,dbIndex = 0
+				    }
+				}
 			}		
 		};
 	}	
