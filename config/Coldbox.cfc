@@ -40,9 +40,9 @@
 			customErrorTemplate		= "",
 
 			//Application Aspects
-			handlerCaching 			= false,
-			eventCaching			= false,
-			viewCaching				= false
+			handlerCaching 			= true,
+			eventCaching			= true,
+			viewCaching				= true
 		};
 
 		// custom settings
@@ -71,7 +71,16 @@
 		logBox = {
 			// Define Appenders
 			appenders = {
-				coldboxTracer = { class="coldbox.system.logging.appenders.ConsoleAppender" }
+				//coldboxTracer = { class="coldbox.system.logging.appenders.ConsoleAppender" }
+				logfile = {
+					class="coldbox.system.logging.appenders.RollingFileAppender",
+					properties={filePath="logs",
+					fileName=coldbox.appname,
+					autoExpand=true,
+					fileMaxSize=2000,
+					fileMaxArchives=2,
+					async=true}
+				}
 			},
 			// Root Logger
 			root = { levelmax="INFO", appenders="*" },
