@@ -55,7 +55,7 @@ component{
 	}
 
 	/**
-	* Note:  May use caching for events since values are set provided in URL route
+	* Note:  May use caching for events since values are provided in URL route
 	**/
     function account( event, rc, prc ) cache="true"{
 		var user = getInstance( "user" );
